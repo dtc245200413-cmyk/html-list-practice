@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bài tập thực hành HTML Bảng Lịch họp công ty sử dụng rowspan gộp ngày và colspan gộp cuộc họp kéo dài.">
+    <title>Lịch họp công ty</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0f172a;
+            --bg-card: rgba(30, 41, 59, 0.85);
+            --border-card: rgba(255, 255, 255, 0.12);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent-blue: #3b82f6;
+            --accent-purple: #a855f7;
+            --accent-emerald: #10b981;
+            --shadow-glow: 0 20px 40px -15px rgba(0, 0, 0, 0.6);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-primary);
+            background-image: 
+                radial-gradient(circle at 15% 15%, rgba(168, 85, 247, 0.15) 0%, transparent 45%),
+                radial-gradient(circle at 85% 85%, rgba(59, 130, 246, 0.15) 0%, transparent 45%);
+            color: var(--text-main);
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 2.5rem 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 850px;
+            width: 100%;
+        }
+
+        .card {
+            background: var(--bg-card);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--border-card);
+            border-radius: 24px;
+            padding: 2.5rem;
+            box-shadow: var(--shadow-glow);
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .header-tag {
+            align-self: center;
+            background: rgba(168, 85, 247, 0.15);
+            color: #c084fc;
+            padding: 0.35rem 1.1rem;
+            border-radius: 9999px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            border: 1px solid rgba(168, 85, 247, 0.3);
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            text-align: center;
+            background: linear-gradient(135deg, #f8fafc 0%, #c084fc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .table-responsive {
+            width: 100%;
+            overflow-x: auto;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: rgba(15, 23, 42, 0.6);
+            color: var(--text-main);
+            font-size: 1.05rem;
+        }
+
+        th {
+            background: linear-gradient(135deg, #1e293b, #334155);
+            color: #c084fc;
+            font-weight: 700;
+            text-align: left;
+            padding: 1rem 1.25rem;
+            border-bottom: 2px solid rgba(168, 85, 247, 0.3);
+        }
+
+        td {
+            padding: 1.1rem 1.25rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            border-right: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        td:last-child {
+            border-right: none;
+        }
+
+        tr:hover td {
+            background: rgba(168, 85, 247, 0.08);
+        }
+
+        td[rowspan] {
+            font-weight: 700;
+            color: #38bdf8;
+            background: rgba(56, 189, 248, 0.08);
+            vertical-align: middle;
+        }
+
+        td[colspan] {
+            text-align: center;
+            font-weight: 700;
+            color: #34d399;
+            background: rgba(16, 185, 129, 0.12);
+        }
+
+        .time-badge {
+            color: #fbbf24;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        footer {
+            margin-top: 1.5rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <main class="card">
+            <span class="header-tag">Bài Thực Hành HTML Gộp Ô Bảng</span>
+            
+            <!-- Thẻ <h1> theo đúng yêu cầu bài toán -->
+            <h1>Lịch họp công ty</h1>
+
+            <!-- Bảng Lịch họp công ty với các cột Ngày, Giờ, Nội dung cuộc họp sử dụng rowspan & colspan -->
+            <div class="table-responsive">
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <th>Ngày</th>
+                            <th>Giờ</th>
+                            <th>Nội dung cuộc họp</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td rowspan="2">Thứ Hai (28/09)</td>
+                            <td><span class="time-badge">08:30 - 10:00</span></td>
+                            <td>Họp giao ban đầu tuần phòng Kỹ thuật & Công nghệ</td>
+                        </tr>
+                        <tr>
+                            <td><span class="time-badge">10:30 - 12:00</span></td>
+                            <td>Phỏng vấn ứng viên tuyển dụng vị trí Senior Developer</td>
+                        </tr>
+                        <tr>
+                            <td>Thứ Ba (29/09)</td>
+                            <td colspan="2">Họp toàn thể Công ty & Đánh giá Chiến lược Quý IV (Cả ngày)</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2">Thứ Tư (30/09)</td>
+                            <td><span class="time-badge">14:00 - 15:30</span></td>
+                            <td>Review báo cáo doanh số & Kế hoạch Phòng Kinh doanh</td>
+                        </tr>
+                        <tr>
+                            <td><span class="time-badge">16:00 - 17:30</span></td>
+                            <td>Họp nghiệm thu dự án nâng cấp hệ thống Website</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+
+        <footer>
+            <p>Bài tập thực hành HTML • Lịch họp công ty (Gộp hàng <code>rowspan</code> & Gộp cột <code>colspan</code>)</p>
+        </footer>
+    </div>
+
+</body>
+</html>
