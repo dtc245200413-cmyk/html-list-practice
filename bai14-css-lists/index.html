@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hướng dẫn & Thực hành các thuộc tính định kiểu Danh sách trong CSS (list-style-type, list-style-image, list-style-position, list-style shorthand)">
+    <title>Thực Hành Định Kiểu Danh Sách Trong CSS (CSS List Styling)</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0f172a;
+            --bg-card: rgba(30, 41, 59, 0.85);
+            --border-card: rgba(255, 255, 255, 0.12);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent-blue: #3b82f6;
+            --accent-purple: #a855f7;
+            --accent-emerald: #10b981;
+            --accent-amber: #f59e0b;
+            --shadow-glow: 0 20px 40px -15px rgba(0, 0, 0, 0.6);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-primary);
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(59, 130, 246, 0.15) 0%, transparent 45%),
+                radial-gradient(circle at 90% 80%, rgba(168, 85, 247, 0.15) 0%, transparent 45%);
+            color: var(--text-main);
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 2.5rem 1rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        header {
+            background: var(--bg-card);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--border-card);
+            border-radius: 24px;
+            padding: 2.5rem;
+            text-align: center;
+            box-shadow: var(--shadow-glow);
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #f8fafc 0%, #60a5fa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        p.subtitle {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+        }
+
+        /* Section Card */
+        .section-card {
+            background: var(--bg-card);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--border-card);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: var(--shadow-glow);
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        h2 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: #60a5fa;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 0.75rem;
+        }
+
+        .code-snippet {
+            font-family: 'Fira Code', monospace;
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 0.85rem 1.1rem;
+            color: #34d399;
+            font-size: 0.95rem;
+        }
+
+        /* Demo Lists Styling */
+        /* 1. list-style-type demos */
+        ul.demo-square { list-style-type: square; }
+        ul.demo-circle { list-style-type: circle; }
+        ol.demo-roman { list-style-type: upper-roman; }
+        ol.demo-alpha { list-style-type: lower-alpha; }
+
+        /* 2. list-style-position demos */
+        ul.demo-outside { list-style-position: outside; background: rgba(59, 130, 246, 0.1); border: 1px dashed rgba(59, 130, 246, 0.4); padding: 1rem 1.5rem; border-radius: 12px; }
+        ul.demo-inside { list-style-position: inside; background: rgba(168, 85, 247, 0.1); border: 1px dashed rgba(168, 85, 247, 0.4); padding: 1rem 1.5rem; border-radius: 12px; }
+
+        /* 3. list-style shorthand demo */
+        ul.demo-shorthand { list-style: square inside; }
+
+        /* 4. Color list styling demo */
+        ol.colored-list {
+            background: #1e1b4b;
+            padding: 1.25rem 2rem;
+            border-radius: 14px;
+            color: #fbbf24; /* Màu cho số đếm bullet */
+            font-weight: 700;
+        }
+
+        ol.colored-list li {
+            background: rgba(255, 255, 255, 0.05);
+            margin: 0.5rem 0;
+            padding: 0.6rem 1rem;
+            border-radius: 8px;
+            color: #f8fafc; /* Màu chữ cho nội dung */
+            font-weight: 500;
+        }
+
+        .list-box {
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 14px;
+            padding: 1.25rem 2rem;
+        }
+
+        footer {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Định Kiểu Danh Sách Trong CSS</h1>
+            <p class="subtitle">Tổng hợp thuộc tính <code>list-style-type</code>, <code>list-style-position</code>, <code>list-style-image</code> & thuộc tính rút gọn <code>list-style</code></p>
+        </header>
+
+        <!-- Phần 1: list-style-type -->
+        <section class="section-card">
+            <h2>📌 1. Thuộc tính list-style-type (Đánh dấu mục danh sách khác nhau)</h2>
+            <div class="code-snippet">
+                ul { list-style-type: square; }<br>
+                ol { list-style-type: upper-roman; }
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem;">
+                <div class="list-box">
+                    <h3 style="color: #60a5fa; margin-bottom: 0.5rem; font-size: 1rem;">UL - Kiểu Square (Hình vuông):</h3>
+                    <ul class="demo-square">
+                        <li>HTML5 & CSS3</li>
+                        <li>JavaScript ES6+</li>
+                        <li>React & Next.js</li>
+                    </ul>
+                </div>
+                <div class="list-box">
+                    <h3 style="color: #c084fc; margin-bottom: 0.5rem; font-size: 1rem;">OL - Kiểu Upper-Roman (Chữ La Mã):</h3>
+                    <ol class="demo-roman">
+                        <li>Lên kế hoạch dự án</li>
+                        <li>Thiết kế UI/UX</li>
+                        <li>Lập trình & Đóng gói</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- Phần 2: list-style-position -->
+        <section class="section-card">
+            <h2>📌 2. Thuộc tính list-style-position (Vị trí dấu bullet: inside / outside)</h2>
+            <div class="code-snippet">
+                ul.outside { list-style-position: outside; } /* Mặc định: Dấu bullet ở ngoài lề nội dung */<br>
+                ul.inside  { list-style-position: inside;  } /* Dấu bullet nằm bên trong dòng nội dung */
+            </div>
+
+            <h3 style="font-size: 1rem; color: #60a5fa;">Vị trí Outside (Bên ngoài):</h3>
+            <ul class="demo-outside">
+                <li>Phần tử danh sách 1 với vị trí bullet outside. Khi văn bản kéo dài xuống dòng, dấu bullet nằm hoàn toàn ngoài lề văn bản.</li>
+                <li>Phần tử danh sách 2.</li>
+            </ul>
+
+            <h3 style="font-size: 1rem; color: #c084fc;">Vị trí Inside (Bên trong):</h3>
+            <ul class="demo-inside">
+                <li>Phần tử danh sách 1 với vị trí bullet inside. Khi văn bản kéo dài xuống dòng, dấu bullet nằm bên trong dòng nội dung.</li>
+                <li>Phần tử danh sách 2.</li>
+            </ul>
+        </section>
+
+        <!-- Phần 3: Thuộc tính rút gọn list-style -->
+        <section class="section-card">
+            <h2>📌 3. Thuộc tính rút gọn list-style (Shorthand Property)</h2>
+            <div class="code-snippet">
+                /* Thứ tự giá trị: type position image */<br>
+                ul { list-style: square inside; }
+            </div>
+            <div class="list-box">
+                <ul class="demo-shorthand">
+                    <li>Danh sách áp dụng thuộc tính rút gọn <code>list-style: square inside;</code></li>
+                    <li>Giúp viết mã CSS ngắn gọn và tối ưu hơn.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Phần 4: Định kiểu danh sách với màu sắc -->
+        <section class="section-card">
+            <h2>📌 4. Định kiểu danh sách kết hợp màu sắc (Color Styling)</h2>
+            <div class="code-snippet">
+                ol { color: #fbbf24; } /* Màu sắc của thẻ ol sẽ áp dụng cho số đếm bullet */<br>
+                ol li { color: #f8fafc; } /* Màu sắc thẻ li áp dụng cho văn bản nội dung */
+            </div>
+            <div>
+                <ol class="colored-list">
+                    <li>Bước 1: Phân tích yêu cầu bài toán.</li>
+                    <li>Bước 2: Xây dựng cấu trúc trang với HTML5.</li>
+                    <li>Bước 3: Định kiểu giao diện với CSS3.</li>
+                </ol>
+            </div>
+        </section>
+
+        <footer>
+            <p>Bài thực hành Kiến thức Định kiểu Danh sách trong CSS (CSS List Properties)</p>
+        </footer>
+    </div>
+
+</body>
+</html>
