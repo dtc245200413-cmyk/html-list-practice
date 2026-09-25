@@ -1,0 +1,80 @@
+/* 1. Thiết lập màu nền (background-color) cho trang web */
+body {
+    background-color: #0f172a;
+    color: #f8fafc;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 2.5rem 1rem;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    max-width: 750px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #60a5fa;
+    margin: 0;
+}
+
+.description {
+    text-align: center;
+    color: #94a3b8;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* 2. Khối <div> chứa ảnh nền (background-image) và căn giữa nội dung */
+.important-box {
+    /* Thêm ảnh nền background-image vào khối div */
+    background-image: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.75)), url('bg-div.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 24px;
+    padding: 3rem 2rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    
+    /* 3. Căn giữa nội dung trong khối <div> */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.important-box h2 {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: #f43f5e;
+    margin: 0;
+}
+
+.important-box p {
+    color: #cbd5e1;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0;
+}
+
+footer {
+    text-align: center;
+    color: #94a3b8;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+}
