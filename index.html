@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bài tập HTML cơ bản về danh sách có thứ tự (ol) và danh sách không có thứ tự (ul) - Danh sách món ăn yêu thích và Các bước chuẩn bị du lịch.">
+    <title>Những món ăn yêu thích & Các bước chuẩn bị du lịch</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0f172a;
+            --bg-card: rgba(30, 41, 59, 0.7);
+            --border-card: rgba(255, 255, 255, 0.1);
+            --accent-food: #f59e0b;
+            --accent-food-light: rgba(245, 158, 11, 0.15);
+            --accent-travel: #3b82f6;
+            --accent-travel-light: rgba(59, 130, 246, 0.15);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --shadow-glow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-primary);
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(245, 158, 11, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(59, 130, 246, 0.08) 0%, transparent 40%);
+            color: var(--text-main);
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 2rem 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+        }
+
+        .header-card {
+            background: var(--bg-card);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--border-card);
+            border-radius: 24px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            box-shadow: var(--shadow-glow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #f59e0b, #ec4899, #3b82f6);
+        }
+
+        .header-tag {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.1);
+            color: #e2e8f0;
+            padding: 0.35rem 1rem;
+            border-radius: 9999px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        /* Target Elements Styling */
+        .section-card {
+            background: var(--bg-card);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--border-card);
+            border-radius: 24px;
+            padding: 2.5rem;
+            box-shadow: var(--shadow-glow);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .section-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .food-section {
+            border-left: 4px solid var(--accent-food);
+        }
+
+        .travel-section {
+            border-left: 4px solid var(--accent-travel);
+        }
+
+        h1 {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: #fbbf24;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(245, 158, 11, 0.2);
+        }
+
+        h2 {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: #60a5fa;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(59, 130, 246, 0.2);
+        }
+
+        /* Unordered List Styling (ul) */
+        ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        ul li {
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(245, 158, 11, 0.15);
+            border-radius: 16px;
+            padding: 1.1rem 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 1.05rem;
+            font-weight: 500;
+            transition: all 0.25s ease;
+        }
+
+        ul li:hover {
+            background: var(--accent-food-light);
+            border-color: rgba(245, 158, 11, 0.4);
+            transform: translateX(6px);
+        }
+
+        ul li .icon {
+            font-size: 1.5rem;
+            background: rgba(245, 158, 11, 0.15);
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            flex-shrink: 0;
+        }
+
+        /* Ordered List Styling (ol) */
+        ol {
+            list-style: none;
+            counter-reset: travel-step;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        ol li {
+            counter-increment: travel-step;
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(59, 130, 246, 0.15);
+            border-radius: 16px;
+            padding: 1.1rem 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+            font-size: 1.05rem;
+            font-weight: 500;
+            transition: all 0.25s ease;
+        }
+
+        ol li:hover {
+            background: var(--accent-travel-light);
+            border-color: rgba(59, 130, 246, 0.4);
+            transform: translateX(6px);
+        }
+
+        ol li::before {
+            content: counter(travel-step);
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 1rem;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);
+        }
+
+        footer {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 640px) {
+            .section-card {
+                padding: 1.5rem;
+            }
+            h1, h2 {
+                font-size: 1.4rem;
+            }
+            ul li, ol li {
+                font-size: 0.95rem;
+                padding: 0.9rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header Banner Card -->
+        <header class="header-card">
+            <span class="header-tag">Bài Thực Hành HTML</span>
+            <h2 style="border: none; margin: 0; padding: 0; justify-content: center; color: var(--text-main); font-size: 2rem;">Thực Hành Danh Sách HTML (UL & OL)</h2>
+            <p style="color: var(--text-muted); margin-top: 0.5rem;">Sử dụng danh sách không có thứ tự (ul) và danh sách có thứ tự (ol)</p>
+        </header>
+
+        <!-- Dynamic Section 1: Unordered List -->
+        <section class="section-card food-section">
+            <h1>🍜 Những món ăn yêu thích của tôi</h1>
+            <ul>
+                <li><span class="icon">🍜</span> Phở bò Hà Nội truyền thống</li>
+                <li><span class="icon">🥖</span> Bánh mì Hội An giòn rụm</li>
+                <li><span class="icon">🥓</span> Bún chả Hà Nội nướng than hoa</li>
+                <li><span class="icon">🍱</span> Cơm tấm Sài Gòn sườn nướng mật ơ</li>
+                <li><span class="icon">🍲</span> Lẩu nấm thiên nhiên thanh ngọt</li>
+            </ul>
+        </section>
+
+        <!-- Dynamic Section 2: Ordered List -->
+        <section class="section-card travel-section">
+            <h2>✈️ Các bước chuẩn bị cho một chuyến du lịch</h2>
+            <ol>
+                <li>Xác định địa điểm, thời gian và ngân sách chuyến đi.</li>
+                <li>Săn vé máy bay / xe khách và đặt phòng khách sạn trước.</li>
+                <li>Lên danh sách các vật dụng, quần áo và thuốc men cần mang.</li>
+                <li>Chuẩn bị đầy đủ giấy tờ tùy thân (CCCD/Passport) và tài chính.</li>
+                <li>Kiểm tra lại toàn bộ hành lý và khởi hành đúng giờ.</li>
+            </ol>
+        </section>
+
+        <footer>
+            <p>Bài tập thực hành HTML • Lưu giữ & đẩy lên GitHub Repository</p>
+        </footer>
+    </div>
+
+</body>
+</html>
