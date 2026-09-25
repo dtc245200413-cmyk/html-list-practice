@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bài tập thực hành Form Đăng ký người dùng kết nối Server demo.codegym.vn">
+    <title>Form Đăng ký Người dùng</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0f172a;
+            --bg-card: rgba(30, 41, 59, 0.85);
+            --border-card: rgba(255, 255, 255, 0.12);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent-blue: #3b82f6;
+            --shadow-glow: 0 20px 40px -15px rgba(0, 0, 0, 0.6);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-primary);
+            background-image: 
+                radial-gradient(circle at 15% 15%, rgba(59, 130, 246, 0.15) 0%, transparent 45%),
+                radial-gradient(circle at 85% 85%, rgba(16, 185, 129, 0.15) 0%, transparent 45%);
+            color: var(--text-main);
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 2.5rem 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 550px;
+            width: 100%;
+        }
+
+        .card {
+            background: var(--bg-card);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--border-card);
+            border-radius: 24px;
+            padding: 2.5rem;
+            box-shadow: var(--shadow-glow);
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .header-tag {
+            align-self: center;
+            background: rgba(59, 130, 246, 0.15);
+            color: #60a5fa;
+            padding: 0.35rem 1.1rem;
+            border-radius: 9999px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+        }
+
+        h2 {
+            font-size: 1.85rem;
+            font-weight: 800;
+            text-align: center;
+            background: linear-gradient(135deg, #f8fafc 0%, #60a5fa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        label {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #cbd5e1;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"] {
+            width: 100%;
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 12px;
+            padding: 0.85rem 1rem;
+            color: #ffffff;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: all 0.25s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="tel"]:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);
+            background: rgba(15, 23, 42, 0.9);
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 1.5rem;
+            padding: 0.25rem 0;
+        }
+
+        .custom-radio {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(15, 23, 42, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 0.6rem 1.25rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 0.95rem;
+        }
+
+        .custom-radio:hover {
+            border-color: rgba(59, 130, 246, 0.4);
+            background: rgba(30, 41, 59, 0.8);
+        }
+
+        .custom-radio input[type="radio"] {
+            accent-color: #3b82f6;
+            width: 16px;
+            height: 16px;
+            cursor: pointer;
+        }
+
+        input[type="submit"] {
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+            color: #ffffff;
+            border: none;
+            border-radius: 12px;
+            padding: 0.9rem 1.5rem;
+            font-size: 1.05rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+            margin-top: 0.75rem;
+        }
+
+        input[type="submit"]:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.5);
+        }
+
+        .info-box {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            background: rgba(15, 23, 42, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 0.85rem 1rem;
+            margin-top: 0.5rem;
+        }
+
+        footer {
+            margin-top: 1.5rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <main class="card">
+            <span class="header-tag">Bài Thực Hành HTML Form</span>
+            <h2>Đăng ký người dùng</h2>
+
+            <!-- Form gửi dữ liệu đến server demo.codegym.vn bằng phương thức POST -->
+            <form action="http://demo.codegym.vn/6/registration_form/register.php" method="POST">
+                
+                <!-- Trường Họ và tên: name="name" -->
+                <div class="form-group">
+                    <label for="name">Họ và tên</label>
+                    <input type="text" id="name" name="name" placeholder="Nhập họ và tên" required>
+                </div>
+
+                <!-- Trường Email: name="email" -->
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Nhập địa chỉ email" required>
+                </div>
+
+                <!-- Trường Số điện thoại: name="phone" -->
+                <div class="form-group">
+                    <label for="phone">Số điện thoại</label>
+                    <input type="text" id="phone" name="phone" placeholder="Nhập số điện thoại" required>
+                </div>
+
+                <!-- Trường Giới tính: name="gender" -->
+                <div class="form-group">
+                    <label>Giới tính</label>
+                    <div class="radio-group">
+                        <label class="custom-radio">
+                            <input type="radio" name="gender" value="nam" checked> Nam
+                        </label>
+                        <label class="custom-radio">
+                            <input type="radio" name="gender" value="nu"> Nữ
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Nút Đăng ký -->
+                <input type="submit" value="Đăng ký">
+            </form>
+
+            <div class="info-box">
+                🌐 <b>Server Action:</b> <code>http://demo.codegym.vn/6/registration_form/register.php</code><br>
+                🔒 <b>Method:</b> <code>POST</code> | <b>Fields:</b> <code>name</code>, <code>email</code>, <code>phone</code>, <code>gender</code>
+            </div>
+        </main>
+
+        <footer>
+            <p>Bài tập thực hành HTML • Form Đăng ký người dùng</p>
+        </footer>
+    </div>
+
+</body>
+</html>
