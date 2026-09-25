@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bảng đơn giản trong HTML</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0f172a;
+            --bg-card: rgba(30, 41, 59, 0.85);
+            --border-card: rgba(255, 255, 255, 0.12);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent-blue: #3b82f6;
+            --shadow-glow: 0 20px 40px -15px rgba(0, 0, 0, 0.6);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-primary);
+            background-image: 
+                radial-gradient(circle at 20% 20%, rgba(59, 130, 246, 0.15) 0%, transparent 45%),
+                radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.15) 0%, transparent 45%);
+            color: var(--text-main);
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 2rem 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 750px;
+            width: 100%;
+        }
+
+        .card {
+            background: var(--bg-card);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--border-card);
+            border-radius: 24px;
+            padding: 2.5rem;
+            box-shadow: var(--shadow-glow);
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .header-tag {
+            align-self: center;
+            background: rgba(59, 130, 246, 0.15);
+            color: #60a5fa;
+            padding: 0.35rem 1.1rem;
+            border-radius: 9999px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+        }
+
+        h2 {
+            font-size: 1.85rem;
+            font-weight: 800;
+            text-align: center;
+            background: linear-gradient(135deg, #f8fafc 0%, #60a5fa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .table-responsive {
+            width: 100%;
+            overflow-x: auto;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Styling for table while keeping border="1" semantics compatible */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: rgba(15, 23, 42, 0.6);
+            color: var(--text-main);
+            font-size: 1.05rem;
+        }
+
+        th {
+            background: linear-gradient(135deg, #1e293b, #334155);
+            color: #60a5fa;
+            font-weight: 700;
+            text-align: left;
+            padding: 1rem 1.25rem;
+            border-bottom: 2px solid rgba(59, 130, 246, 0.3);
+        }
+
+        td {
+            padding: 1rem 1.25rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        tr:hover td {
+            background: rgba(59, 130, 246, 0.1);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        footer {
+            margin-top: 1.5rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <main class="card">
+            <span class="header-tag">Bài Thực Hành HTML Thẻ Bảng</span>
+            <h2>Danh sách học sinh</h2>
+
+            <!-- Bảng danh sách học sinh theo yêu cầu bài toán -->
+            <div class="table-responsive">
+                <table border="1">
+                    <tr>
+                        <th>Họ và Tên</th>
+                        <th>Tuổi</th>
+                        <th>Lớp</th>
+                    </tr>
+                    <tr>
+                        <td>Nguyễn Văn A</td>
+                        <td>15</td>
+                        <td>10A1</td>
+                    </tr>
+                    <tr>
+                        <td>Trần Thị B</td>
+                        <td>16</td>
+                        <td>11B2</td>
+                    </tr>
+                    <tr>
+                        <td>Lê Văn C</td>
+                        <td>17</td>
+                        <td>12C3</td>
+                    </tr>
+                </table>
+            </div>
+        </main>
+
+        <footer>
+            <p>Bài tập thực hành HTML • Tạo bảng hiển thị dữ liệu <code>&lt;table&gt;</code></p>
+        </footer>
+    </div>
+
+</body>
+</html>
