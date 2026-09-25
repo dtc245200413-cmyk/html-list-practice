@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Market Research Survey - Customer Satisfaction Form">
+    <title>Market Research Survey</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0f172a;
+            --bg-card: rgba(30, 41, 59, 0.85);
+            --border-card: rgba(255, 255, 255, 0.12);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent-blue: #3b82f6;
+            --accent-purple: #a855f7;
+            --shadow-glow: 0 20px 40px -15px rgba(0, 0, 0, 0.6);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-primary);
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(59, 130, 246, 0.12) 0%, transparent 45%),
+                radial-gradient(circle at 90% 80%, rgba(168, 85, 247, 0.12) 0%, transparent 45%);
+            color: var(--text-main);
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 3rem 1rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 850px;
+            width: 100%;
+        }
+
+        .survey-card {
+            background: var(--bg-card);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--border-card);
+            border-radius: 24px;
+            padding: 3rem 2.5rem;
+            box-shadow: var(--shadow-glow);
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        header.info {
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 1.5rem;
+        }
+
+        header.info h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #f8fafc 0%, #60a5fa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        header.info p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.75rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+
+        label.desc, legend.desc {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #f1f5f9;
+        }
+
+        select, input[type="text"], textarea {
+            width: 100%;
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 12px;
+            padding: 0.85rem 1.1rem;
+            color: #ffffff;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: all 0.25s ease;
+        }
+
+        select:focus, input[type="text"]:focus, textarea:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);
+            background: rgba(15, 23, 42, 0.9);
+        }
+
+        select option {
+            background-color: #0f172a;
+            color: #ffffff;
+        }
+
+        .options-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .choice-option {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: rgba(15, 23, 42, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 0.75rem 1.25rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .choice-option:hover {
+            border-color: rgba(59, 130, 246, 0.4);
+            background: rgba(30, 41, 59, 0.8);
+        }
+
+        .choice-option input[type="radio"],
+        .choice-option input[type="checkbox"] {
+            accent-color: #3b82f6;
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+
+        /* Currency Input */
+        .currency-field {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .currency-field .symbol {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #60a5fa;
+        }
+
+        .currency-field input {
+            width: 140px;
+        }
+
+        /* Likert Scale Table */
+        .likert-table-wrapper {
+            overflow-x: auto;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        table.likert-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: rgba(15, 23, 42, 0.6);
+            text-align: center;
+        }
+
+        table.likert-table th, table.likert-table td {
+            padding: 1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        table.likert-table thead td {
+            font-weight: 700;
+            color: #60a5fa;
+            background: rgba(30, 41, 59, 0.9);
+            font-size: 0.95rem;
+        }
+
+        table.likert-table tbody th {
+            text-align: left;
+            font-weight: 600;
+            color: #e2e8f0;
+            width: 40%;
+        }
+
+        table.likert-table input[type="radio"] {
+            accent-color: #3b82f6;
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+
+        table.likert-table tr:hover {
+            background: rgba(59, 130, 246, 0.08);
+        }
+
+        /* Submit Button */
+        input[type="submit"] {
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+            color: #ffffff;
+            border: none;
+            border-radius: 14px;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+            align-self: flex-start;
+            margin-top: 1rem;
+        }
+
+        input[type="submit"]:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.5);
+        }
+
+        footer {
+            margin-top: 2rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 640px) {
+            .survey-card {
+                padding: 1.5rem;
+            }
+            header.info h2 {
+                font-size: 1.7rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <main class="survey-card">
+            <header class="info">
+                <h2>Market Research Survey</h2>
+                <p>Please take a few moments to complete this satisfaction survey.</p>
+            </header>
+
+            <form action="#" method="POST">
+                
+                <!-- Q1: Age Range -->
+                <div class="form-group">
+                    <label class="desc" for="age">What is your age range?</label>
+                    <select id="age" name="age">
+                        <option value="18-24">18-24</option>
+                        <option value="25-34">25-34</option>
+                        <option value="35-50">35-50</option>
+                        <option value="50+">50+</option>
+                    </select>
+                </div>
+
+                <!-- Q2: Income Range -->
+                <div class="form-group">
+                    <label class="desc" for="income">What is your yearly income range?</label>
+                    <select id="income" name="income">
+                        <option value="$0 - $25,000">$0 - $25,000</option>
+                        <option value="$25,001 - $50,000">$25,001 - $50,000</option>
+                        <option value="$50,001 - $100,000">$50,001 - $100,000</option>
+                        <option value="$100,000+">$100,000+</option>
+                    </select>
+                </div>
+
+                <!-- Q3: Gender Identity -->
+                <div class="form-group">
+                    <legend class="desc">Gender Identity</legend>
+                    <div class="options-list">
+                        <label class="choice-option">
+                            <input type="radio" name="gender" value="Male" checked> Male
+                        </label>
+                        <label class="choice-option">
+                            <input type="radio" name="gender" value="Female"> Female
+                        </label>
+                        <label class="choice-option">
+                            <input type="radio" name="gender" value="Nonbinary"> Nonbinary
+                        </label>
+                        <label class="choice-option">
+                            <input type="radio" name="gender" value="Other"> Other:
+                            <input type="text" name="gender_other" placeholder="Specify gender" style="width: auto; flex: 1; padding: 0.4rem 0.8rem;">
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Q4: Products Purchased -->
+                <div class="form-group">
+                    <legend class="desc">Which of the following products have you purchased in the last 2 months. Please check all that apply.</legend>
+                    <div class="options-list">
+                        <label class="choice-option">
+                            <input type="checkbox" name="product" value="Product 1"> Product 1
+                        </label>
+                        <label class="choice-option">
+                            <input type="checkbox" name="product" value="Product 2"> Product 2
+                        </label>
+                        <label class="choice-option">
+                            <input type="checkbox" name="product" value="Product 3"> Product 3
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Q5: Usage Frequency -->
+                <div class="form-group">
+                    <legend class="desc">How often would you use our new product?</legend>
+                    <div class="options-list">
+                        <label class="choice-option">
+                            <input type="radio" name="frequency" value="Daily" checked> Daily
+                        </label>
+                        <label class="choice-option">
+                            <input type="radio" name="frequency" value="Weekly"> Weekly
+                        </label>
+                        <label class="choice-option">
+                            <input type="radio" name="frequency" value="Monthly"> Monthly
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Q6: Pricing -->
+                <div class="form-group">
+                    <label class="desc" for="price_dollars">What would you pay for the new product?</label>
+                    <div class="currency-field">
+                        <span class="symbol">$</span>
+                        <input type="text" id="price_dollars" name="price_dollars" placeholder="Dollars">
+                        <span class="symbol">.</span>
+                        <input type="text" id="price_cents" name="price_cents" placeholder="Cents" style="width: 80px;" maxlength="2">
+                    </div>
+                </div>
+
+                <!-- Q7: Features Textarea -->
+                <div class="form-group">
+                    <label class="desc" for="features">What features would you like to see in the new product.</label>
+                    <textarea id="features" name="features" rows="5" placeholder="Enter requested features..."></textarea>
+                </div>
+
+                <!-- Q8: Likert Scale Rating Table -->
+                <div class="form-group">
+                    <label class="desc">Please rate your level of agreement with the following statements.</label>
+                    <div class="likert-table-wrapper">
+                        <table class="likert-table">
+                            <thead>
+                                <tr>
+                                    <th>&nbsp;</th>
+                                    <td>Strongly Disagree</td>
+                                    <td>Disagree</td>
+                                    <td>Agree</td>
+                                    <td>Strongly Agree</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th>Our products are priced fairly.</th>
+                                    <td><input type="radio" name="priced_fairly" value="Strongly Disagree"></td>
+                                    <td><input type="radio" name="priced_fairly" value="Disagree"></td>
+                                    <td><input type="radio" name="priced_fairly" value="Agree" checked></td>
+                                    <td><input type="radio" name="priced_fairly" value="Strongly Agree"></td>
+                                </tr>
+                                <tr>
+                                    <th>Our products are high quality.</th>
+                                    <td><input type="radio" name="high_quality" value="Strongly Disagree"></td>
+                                    <td><input type="radio" name="high_quality" value="Disagree"></td>
+                                    <td><input type="radio" name="high_quality" value="Agree"></td>
+                                    <td><input type="radio" name="high_quality" value="Strongly Agree" checked></td>
+                                </tr>
+                                <tr>
+                                    <th>You would recommend our product to a friend or coworker.</th>
+                                    <td><input type="radio" name="recommend" value="Strongly Disagree"></td>
+                                    <td><input type="radio" name="recommend" value="Disagree"></td>
+                                    <td><input type="radio" name="recommend" value="Agree"></td>
+                                    <td><input type="radio" name="recommend" value="Strongly Agree" checked></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <input type="submit" value="Submit">
+            </form>
+        </main>
+
+        <footer>
+            <p>Wufoo Market Research Customer Survey Design System</p>
+        </footer>
+    </div>
+
+</body>
+</html>
