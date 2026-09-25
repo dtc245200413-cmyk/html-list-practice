@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bài tập thực hành chèn hình ảnh trong HTML với thẻ img và thuộc tính alt mô tả hình ảnh.">
+    <title>Thực hành chèn hình ảnh trong HTML</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0f172a;
+            --bg-card: rgba(30, 41, 59, 0.8);
+            --border-card: rgba(255, 255, 255, 0.12);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent: #10b981;
+            --shadow-glow: 0 20px 40px -15px rgba(0, 0, 0, 0.6);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-primary);
+            background-image: 
+                radial-gradient(circle at 20% 20%, rgba(16, 185, 129, 0.12) 0%, transparent 45%),
+                radial-gradient(circle at 80% 80%, rgba(59, 130, 246, 0.12) 0%, transparent 45%);
+            color: var(--text-main);
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 2rem 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+        }
+
+        .card {
+            background: var(--bg-card);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--border-card);
+            border-radius: 24px;
+            padding: 2.5rem;
+            box-shadow: var(--shadow-glow);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .tag {
+            background: rgba(16, 185, 129, 0.15);
+            color: #34d399;
+            padding: 0.35rem 1.1rem;
+            border-radius: 9999px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            border: 1px solid rgba(16, 185, 129, 0.3);
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #f8fafc 0%, #34d399 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .img-wrapper {
+            position: relative;
+            width: 100%;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .img-wrapper:hover {
+            transform: scale(1.01);
+            box-shadow: 0 20px 40px rgba(16, 185, 129, 0.25);
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .caption {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            font-style: italic;
+            margin-top: 0.25rem;
+        }
+
+        footer {
+            margin-top: 2rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <main class="card">
+            <span class="tag">Bài Thực Hành HTML Thẻ Img</span>
+            <h1>Hình ảnh yêu thích của tôi</h1>
+
+            <!-- Thẻ <img> chính thức với thuộc tính src và alt mô tả -->
+            <div class="img-wrapper">
+                <img src="images/landscape.png" alt="Bức tranh phong cảnh thiên nhiên núi rừng hoàng hôn rực rỡ và ngôi nhà gỗ nhỏ ấm cúng">
+            </div>
+
+            <p class="caption">📌 Thẻ <code>&lt;img&gt;</code> sử dụng đường dẫn <code>src="images/landscape.png"</code> và thuộc tính <code>alt="Bức tranh phong cảnh thiên nhiên núi rừng hoàng hôn rực rỡ và ngôi nhà gỗ nhỏ ấm cúng"</code>.</p>
+        </main>
+
+        <footer>
+            <p>Bài tập thực hành HTML • Hiển thị hình ảnh & Thuộc tính ALT</p>
+        </footer>
+    </div>
+
+</body>
+</html>
