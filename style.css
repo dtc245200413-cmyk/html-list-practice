@@ -1,0 +1,11 @@
+/* File CSS ngoại tuyến (External Style) */
+h1 {
+    color: #ea580c;
+    font-family: sans-serif;
+}
+
+p {
+    color: #0284c7;
+    font-size: 18px;
+    font-family: sans-serif;
+}
