@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hướng dẫn & Thực hành toàn tập các thuộc tính định kiểu Bảng trong CSS (border, border-collapse, width, height, text-align, vertical-align, padding, background-color)">
+    <title>Thực Hành Định Kiểu Bảng Trong CSS (CSS Table Styling)</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0f172a;
+            --bg-card: rgba(30, 41, 59, 0.85);
+            --border-card: rgba(255, 255, 255, 0.12);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent-blue: #3b82f6;
+            --accent-purple: #a855f7;
+            --accent-emerald: #10b981;
+            --shadow-glow: 0 20px 40px -15px rgba(0, 0, 0, 0.6);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-primary);
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(59, 130, 246, 0.15) 0%, transparent 45%),
+                radial-gradient(circle at 90% 80%, rgba(168, 85, 247, 0.15) 0%, transparent 45%);
+            color: var(--text-main);
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 2.5rem 1rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        header {
+            background: var(--bg-card);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--border-card);
+            border-radius: 24px;
+            padding: 2.5rem;
+            text-align: center;
+            box-shadow: var(--shadow-glow);
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #f8fafc 0%, #60a5fa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        p.subtitle {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+        }
+
+        .section-card {
+            background: var(--bg-card);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--border-card);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: var(--shadow-glow);
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        h2 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: #60a5fa;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 0.75rem;
+        }
+
+        .code-snippet {
+            font-family: 'Fira Code', monospace;
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 0.85rem 1.1rem;
+            color: #34d399;
+            font-size: 0.95rem;
+        }
+
+        /* CSS Table Demos */
+        .table-responsive {
+            width: 100%;
+            overflow-x: auto;
+        }
+
+        /* 1. Double Border Demo */
+        table.tbl-double, table.tbl-double th, table.tbl-double td {
+            border: 1px solid #60a5fa;
+        }
+        table.tbl-double { width: 100%; color: #f8fafc; margin-top: 0.5rem; }
+        table.tbl-double th, table.tbl-double td { padding: 8px 12px; }
+
+        /* 2. Border Collapse Demo */
+        table.tbl-collapsed {
+            width: 100%;
+            border-collapse: collapse;
+            color: #f8fafc;
+        }
+        table.tbl-collapsed th, table.tbl-collapsed td {
+            border: 1px solid #c084fc;
+            padding: 10px 14px;
+        }
+
+        /* 3. Width, Height, Alignments & Padding Demo */
+        table.tbl-styled {
+            width: 100%;
+            border-collapse: collapse;
+            background: rgba(15, 23, 42, 0.7);
+        }
+
+        table.tbl-styled th {
+            height: 50px;
+            background-color: #2563eb;
+            color: #ffffff;
+            text-align: left;
+            padding: 12px 16px;
+            font-size: 1rem;
+        }
+
+        table.tbl-styled td {
+            padding: 14px 16px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            vertical-align: bottom;
+            height: 60px;
+        }
+
+        table.tbl-styled tr:nth-child(even) {
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        table.tbl-styled tr:hover {
+            background-color: rgba(59, 130, 246, 0.15);
+        }
+
+        footer {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Định Kiểu Bảng Trong CSS (CSS Table Styling)</h1>
+            <p class="subtitle">Hướng dẫn & Thực hành các thuộc tính border, border-collapse, width, height, text-align, vertical-align & padding</p>
+        </header>
+
+        <!-- 1. Đường viền bảng & border-collapse -->
+        <section class="section-card">
+            <h2>📌 1. Đường viền bảng (Border & Border-collapse)</h2>
+            <p style="color: var(--text-muted);">Mặc định khi đặt <code>border</code> cho table, th, td sẽ tạo ra đường viền đôi. Sử dụng <code>border-collapse: collapse;</code> để hợp nhất thành một đường viền đơn sắc nét.</p>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem;">
+                <div>
+                    <h3 style="font-size: 0.95rem; color: #60a5fa; margin-bottom: 0.5rem;">Viền đôi (Chưa dùng collapse):</h3>
+                    <div class="table-responsive">
+                        <table class="tbl-double">
+                            <tr><th>Họ tên</th><th>Tuổi</th></tr>
+                            <tr><td>Nguyễn Văn A</td><td>20</td></tr>
+                            <tr><td>Trần Thị B</td><td>22</td></tr>
+                        </table>
+                    </div>
+                </div>
+                <div>
+                    <h3 style="font-size: 0.95rem; color: #c084fc; margin-bottom: 0.5rem;">Viền đơn (Dùng border-collapse: collapse):</h3>
+                    <div class="table-responsive">
+                        <table class="tbl-collapsed">
+                            <tr><th>Họ tên</th><th>Tuổi</th></tr>
+                            <tr><td>Nguyễn Văn A</td><td>20</td></tr>
+                            <tr><td>Trần Thị B</td><td>22</td></tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Kích thước & Căn chỉnh Alignment -->
+        <section class="section-card">
+            <h2>📌 2. Kích thước, Căn chỉnh (text-align / vertical-align) & Padding</h2>
+            <div class="code-snippet">
+                table { width: 100%; border-collapse: collapse; }<br>
+                th { height: 50px; text-align: left; background-color: #2563eb; }<br>
+                td { padding: 14px; vertical-align: bottom; }
+            </div>
+
+            <div class="table-responsive">
+                <table class="tbl-styled">
+                    <thead>
+                        <tr>
+                            <th>Tên sản phẩm (text-align: left)</th>
+                            <th>Giá thành</th>
+                            <th>Trạng thái (vertical-align: bottom)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>iPhone 15 Pro Max</td>
+                            <td>29.990.000 VNĐ</td>
+                            <td>Còn hàng</td>
+                        </tr>
+                        <tr>
+                            <td>MacBook Pro M3 Max</td>
+                            <td>49.990.000 VNĐ</td>
+                            <td>Còn hàng</td>
+                        </tr>
+                        <tr>
+                            <td>iPad Pro M2</td>
+                            <td>21.490.000 VNĐ</td>
+                            <td>Hết hàng</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <footer>
+            <p>Bài thực hành Kiến thức Định kiểu Bảng trong CSS (CSS Table Properties)</p>
+        </footer>
+    </div>
+
+</body>
+</html>
