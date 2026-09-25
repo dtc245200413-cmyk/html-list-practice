@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Tìm kiếm Google</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0f172a;
+            --bg-card: rgba(30, 41, 59, 0.85);
+            --border-card: rgba(255, 255, 255, 0.12);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --shadow-glow: 0 20px 40px -15px rgba(0, 0, 0, 0.6);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-primary);
+            background-image: 
+                radial-gradient(circle at 15% 15%, rgba(59, 130, 246, 0.15) 0%, transparent 45%),
+                radial-gradient(circle at 85% 85%, rgba(234, 67, 53, 0.15) 0%, transparent 45%);
+            color: var(--text-main);
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 2rem 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 650px;
+            width: 100%;
+        }
+
+        .card {
+            background: var(--bg-card);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--border-card);
+            border-radius: 24px;
+            padding: 3rem 2.5rem;
+            box-shadow: var(--shadow-glow);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 1.75rem;
+        }
+
+        .logo {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        .logo .g { color: #4285f4; }
+        .logo .o1 { color: #ea4335; }
+        .logo .o2 { color: #fbbc05; }
+        .logo .g2 { color: #4285f4; }
+        .logo .l { color: #34a853; }
+        .logo .e { color: #ea4335; }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+            width: 100%;
+        }
+
+        .search-box {
+            display: flex;
+            align-items: center;
+            background: rgba(15, 23, 42, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 9999px;
+            padding: 0.5rem 0.5rem 0.5rem 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .search-box:focus-within {
+            border-color: #4285f4;
+            box-shadow: 0 0 0 4px rgba(66, 133, 244, 0.25);
+            background: rgba(15, 23, 42, 0.9);
+        }
+
+        input[type="text"] {
+            flex: 1;
+            background: transparent;
+            border: none;
+            outline: none;
+            color: #ffffff;
+            font-size: 1.05rem;
+            font-family: inherit;
+        }
+
+        input[type="text"]::placeholder {
+            color: #64748b;
+        }
+
+        input[type="submit"] {
+            background: linear-gradient(135deg, #4285f4, #1a73e8);
+            color: #ffffff;
+            border: none;
+            padding: 0.75rem 1.75rem;
+            border-radius: 9999px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            box-shadow: 0 4px 12px rgba(66, 133, 244, 0.3);
+        }
+
+        input[type="submit"]:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(66, 133, 244, 0.5);
+        }
+
+        .note {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+            background: rgba(15, 23, 42, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 14px;
+            padding: 1rem;
+        }
+
+        footer {
+            margin-top: 1.5rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <main class="card">
+            <div class="logo">
+                <span class="g">G</span><span class="o1">o</span><span class="o2">o</span><span class="g2">g</span><span class="l">l</span><span class="e">e</span> Search
+            </div>
+
+            <!-- Form kết nối Google Search theo yêu cầu -->
+            <form action="https://www.google.com.vn/search" method="GET">
+                <div class="search-box">
+                    <input type="text" name="q" placeholder="Nhập từ khóa muốn tìm kiếm..."/>
+                    <input type="submit" value="Tìm kiếm"/>
+                </div>
+            </form>
+
+            <div class="note">
+                💡 <b>Giải thích tham số:</b><br>
+                - <code>action="https://www.google.com.vn/search"</code>: Trang tiếp nhận và xử lý dữ liệu.<br>
+                - <code>method="GET"</code>: Gửi từ khóa công khai trên URL.<br>
+                - <code>name="q"</code>: Định danh từ khóa tìm kiếm theo đúng định dạng Google yêu cầu.
+            </div>
+        </main>
+
+        <footer>
+            <p>Bài tập thực hành HTML • Form tìm kiếm Google Search</p>
+        </footer>
+    </div>
+
+</body>
+</html>
