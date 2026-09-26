@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thực Hành SASS Variables & Mixins</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Tối Ưu CSS Với SASS Variables & Mixins</h1>
+        <h2>Ứng dụng Mixin tái sử dụng mã nguồn hiệu quả</h2>
+
+        <div class="card" style="margin-top: 20px;">
+            <h2>1. Thẻ Card (Box Style Mixin)</h2>
+            <p style="margin-bottom: 15px;">Thẻ card này được áp dụng mixin <code>@include box-style;</code> giúp tạo nền trắng, padding 15px, bo tròn góc 10px và đổ bóng đồng nhất.</p>
+            <div>
+                <button class="button">Nút Red (Default)</button>
+                <button class="button button--blue">Nút Blue</button>
+                <button class="button button--green">Nút Green</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>2. Ưu Điểm Khi Sử Dụng Variables & Mixins</h2>
+            <p>• Khi cần đổi tông màu chính, chỉ cần sửa duy nhất 1 biến <code>$primary-color</code>.</p>
+            <p>• Tránh lặp lại hàng chục dòng mã padding, border-radius, box-shadow trong dự án.</p>
+        </div>
+    </div>
+
+</body>
+</html>

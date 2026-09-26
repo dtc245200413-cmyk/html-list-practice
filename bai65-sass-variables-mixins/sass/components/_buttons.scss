@@ -1,0 +1,11 @@
+.button {
+  @include button-style($primary-color);
+
+  &--blue {
+    @include button-style(#2563eb);
+  }
+
+  &--green {
+    @include button-style(#10b981);
+  }
+}

@@ -1,0 +1,94 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8fafc;
+  color: #222222;
+  line-height: 1.6;
+}
+
+h1 {
+  font-size: 32px;
+  color: #222222;
+  margin-bottom: 12px;
+}
+
+h2 {
+  font-size: 28px;
+  color: #222222;
+  margin-bottom: 10px;
+}
+
+.button {
+  background: #dc2626;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.button:hover {
+  background: rgb(69.9019607843%, 11.2745098039%, 11.2745098039%);
+  transform: translateY(-2px);
+}
+.button--blue {
+  background: #2563eb;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.button--blue:hover {
+  background: rgb(7.2829131653%, 29.8599439776%, 79.3837535014%);
+  transform: translateY(-2px);
+}
+.button--green {
+  background: #10b981;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.button--green:hover {
+  background: rgb(4.6824700029%, 54.1410594088%, 37.7524143986%);
+  transform: translateY(-2px);
+}
+
+.card {
+  background: #ffffff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+.card {
+  margin-bottom: 20px;
+}
+
+.container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
