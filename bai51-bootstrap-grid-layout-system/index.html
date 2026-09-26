@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Containers & Grid System</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body class="d-flex flex-column min-vh-100 bg-light">
+    <!-- 1. Header -->
+    <header class="bg-primary text-white text-center py-4">
+        <div class="container">
+            <h1 class="fw-bold">Bootstrap Grid System Layout</h1>
+        </div>
+    </header>
+
+    <!-- 2. Navbar với Dropdown -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">MyPortal</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNavbar">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#">Trang Chủ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Tin Tức</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Danh Mục</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Công Nghệ</a></li>
+                            <li><a class="dropdown-item" href="#">Đời Sống</a></li>
+                            <li><a class="dropdown-item" href="#">Giải Trí</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">Liên Hệ</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 3. Main Content & Sidebar với Grid System (col-lg-8 & col-lg-4) -->
+    <main class="container my-4 flex-grow-1">
+        <div class="row">
+            <!-- Main Content: col-lg-8 (Desktop >= 992px) và col-12 (Mobile < 992px) -->
+            <div class="col-lg-8 col-12 mb-4">
+                <div class="p-4 bg-white rounded border shadow-sm">
+                    <h2 class="fw-bold text-primary mb-3">Nội Dung Chính (Main Content)</h2>
+                    <p class="lead text-secondary">Bố cục trang web này áp dụng chuẩn Bootstrap Containers và hệ thống lưới Grid System (row, col-lg-8, col-lg-4, col-12).</p>
+                    <p>Trên màn hình máy tính lớn (≥ 992px), phần Nội dung chính chiếm 8 cột (<code>col-lg-8</code>) và Sidebar chiếm 4 cột (<code>col-lg-4</code>). Khi thu nhỏ màn hình di động (< 992px), các cột tự động xếp chồng dọc gọn gàng (<code>col-12</code>).</p>
+                </div>
+            </div>
+
+            <!-- Sidebar: col-lg-4 (Desktop >= 992px) và col-12 (Mobile < 992px) -->
+            <div class="col-lg-4 col-12">
+                <div class="p-4 bg-white rounded border shadow-sm">
+                    <h3 class="fw-bold h5 text-dark mb-3">Sidebar (Thông Tin Phụ)</h3>
+                    <div class="card mb-3 border-0 bg-light">
+                        <div class="card-body">
+                            <h4 class="card-title h6 fw-bold text-primary">Tin nổi bật</h4>
+                            <p class="card-text small text-muted">Thông tin sự kiện công nghệ và lập trình mới nhất...</p>
+                        </div>
+                    </div>
+                    <div class="card border-0 bg-light">
+                        <div class="card-body">
+                            <h4 class="card-title h6 fw-bold text-primary">Quảng cáo</h4>
+                            <p class="card-text small text-muted">Banner giới thiệu khóa học và dịch vụ...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 4. Footer -->
+    <footer class="bg-dark text-white text-center py-3 mt-auto">
+        <div class="container">
+            <p class="mb-0">&copy; 2026 Bootstrap Containers & Grid System Layout. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
