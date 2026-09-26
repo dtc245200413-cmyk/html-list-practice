@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thuộc Tính grid-template-columns Trong CSS Grid</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Thực Hành Thuộc Tính <code>grid-template-columns</code></h1>
+
+    <!-- VÍ DỤ 1: Cột Kích Thước Tỷ Lệ Cố Định & Đơn Vị Phân Phối (1fr 2fr 1fr) -->
+    <section class="example-section">
+        <h2>Ví Dụ 1: Chia cột theo tỷ lệ phân bổ (1fr 2fr 1fr)</h2>
+        <div class="grid-container example-1">
+            <div class="grid-item">Cột 1 (1fr)</div>
+            <div class="grid-item">Cột 2 (2fr - Rộng gấp đôi)</div>
+            <div class="grid-item">Cột 3 (1fr)</div>
+            <div class="grid-item">Cột 4 (1fr)</div>
+            <div class="grid-item">Cột 5 (2fr - Rộng gấp đôi)</div>
+            <div class="grid-item">Cột 6 (1fr)</div>
+        </div>
+    </section>
+
+    <!-- VÍ DỤ 2: Kích Thước Theo min-content, max-content & auto -->
+    <section class="example-section">
+        <h2>Ví Dụ 2: Kích thước dựa theo nội dung (min-content | max-content | auto)</h2>
+        <div class="grid-container example-2">
+            <div class="grid-item">min-content (Nội dung nhỏ nhất)</div>
+            <div class="grid-item">max-content (Nội dung dài nhất nằm trên 1 dòng)</div>
+            <div class="grid-item">auto (Tự động lấp đầy phần còn lại)</div>
+        </div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,78 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    padding: 30px 20px;
+    background-color: #f8fafc;
+    color: #1e293b;
+}
+
+h1 {
+    text-align: center;
+    color: #0f172a;
+    margin-bottom: 30px;
+}
+
+.example-section {
+    max-width: 900px;
+    margin: 0 auto 40px auto;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+h2 {
+    font-size: 1.2rem;
+    color: #0284c7;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 5px;
+}
+
+.grid-container {
+    display: grid;
+    gap: 15px;
+    background-color: #e2e8f0;
+    padding: 15px;
+    border-radius: 6px;
+}
+
+.grid-item {
+    background-color: #0284c7;
+    color: white;
+    padding: 20px 10px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 4px;
+}
+
+/* VÍ DỤ 1: grid-template-columns: 1fr 2fr 1fr */
+.example-1 {
+    grid-template-columns: 1fr 2fr 1fr;
+}
+
+.example-1 .grid-item:nth-child(even) {
+    background-color: #0369a1;
+}
+
+/* VÍ DỤ 2: grid-template-columns: min-content max-content auto */
+.example-2 {
+    grid-template-columns: min-content max-content auto;
+}
+
+.example-2 .grid-item {
+    background-color: #0d9488;
+}
+
+.example-2 .grid-item:nth-child(2) {
+    background-color: #0f766e;
+}
+
+.example-2 .grid-item:nth-child(3) {
+    background-color: #115e59;
+}
