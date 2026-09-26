@@ -1,0 +1,230 @@
+/* =========================================================
+   1. ĐỊNH DẠNG CHUNG (GLOBAL RESETS & TYPOGRAPHY)
+   ========================================================= */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f1f5f9;
+    color: #334155;
+    line-height: 1.6;
+    padding: 15px;
+}
+
+#wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+}
+
+/* =========================================================
+   2. HEADER & NAV (ĐẦU TRANG & THANH MENU)
+   ========================================================= */
+#header {
+    background-color: #0284c7;
+    color: #ffffff;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+#header h1 {
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+}
+
+#nav {
+    background-color: #0f172a;
+    padding: 12px 20px;
+}
+
+#nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#nav ul li {
+    margin: 5px 15px;
+}
+
+#nav ul li a {
+    color: #f8fafc;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+}
+
+#nav ul li a:hover {
+    color: #38bdf8;
+}
+
+/* =========================================================
+   3. BỐ CỤC KHỐI CONTAINER 3 CỘT (DESKTOP FLEXBOX)
+   ========================================================= */
+#container {
+    display: flex;
+    padding: 20px;
+    gap: 20px;
+}
+
+.box {
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    padding: 15px;
+    border-radius: 6px;
+}
+
+#left-sidebar {
+    flex: 0 0 220px;
+}
+
+#left-sidebar h3 {
+    color: #0284c7;
+    border-bottom: 2px solid #0284c7;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+#left-sidebar ul {
+    list-style: square;
+    padding-left: 20px;
+}
+
+#left-sidebar ul li {
+    margin-bottom: 8px;
+}
+
+#left-sidebar ul li a {
+    color: #0284c7;
+    text-decoration: none;
+}
+
+#content {
+    flex: 1;
+}
+
+#content h2 {
+    color: #0f172a;
+    margin-bottom: 12px;
+    font-size: 1.4rem;
+}
+
+.card {
+    background-color: #ffffff;
+    border: 1px solid #cbd5e1;
+    padding: 12px;
+    margin-top: 15px;
+    border-radius: 6px;
+}
+
+.card h4 {
+    color: #0369a1;
+    margin-bottom: 5px;
+}
+
+#right-sidebar {
+    flex: 0 0 220px;
+}
+
+#right-sidebar h3 {
+    color: #e11d48;
+    border-bottom: 2px solid #e11d48;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.widget {
+    background-color: #ffffff;
+    border: 1px solid #cbd5e1;
+    padding: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    border-radius: 4px;
+    font-weight: 500;
+}
+
+/* =========================================================
+   4. FOOTER (CHÂN TRANG)
+   ========================================================= */
+#footer {
+    background-color: #0f172a;
+    color: #94a3b8;
+    text-align: center;
+    padding: 15px;
+    font-size: 0.85rem;
+}
+
+/* =========================================================
+   5. RESPONSIVE MEDIA QUERIES (TABLET & MOBILE)
+   ========================================================= */
+
+/* Tablet (Màn hình dưới 900px): Chuyển cột phải xuống dưới */
+@media (max-width: 900px) {
+    #container {
+        flex-wrap: wrap;
+    }
+
+    #left-sidebar {
+        flex: 0 0 200px;
+    }
+
+    #content {
+        flex: 1;
+    }
+
+    #right-sidebar {
+        flex: 1 1 100%;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+
+    #right-sidebar h3 {
+        margin-bottom: 0;
+        margin-right: 15px;
+    }
+
+    .widget {
+        flex: 1;
+        margin-bottom: 0;
+    }
+}
+
+/* Mobile (Màn hình dưới 600px): Xếp chồng 1 cột dọc duy nhất */
+@media (max-width: 600px) {
+    #container {
+        flex-direction: column;
+        padding: 10px;
+        gap: 15px;
+    }
+
+    #left-sidebar, #content, #right-sidebar {
+        flex: 1 1 100%;
+        width: 100%;
+    }
+
+    #right-sidebar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    #nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #nav ul li {
+        margin: 5px 0;
+    }
+}
