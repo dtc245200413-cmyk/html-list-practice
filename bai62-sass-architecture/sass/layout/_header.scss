@@ -1,0 +1,17 @@
+.header {
+  background: linear-gradient(135deg, $dark-bg 0%, #1e293b 100%);
+  color: #ffffff;
+  padding: $spacing-xl 0;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+
+  &__title {
+    color: #ffffff;
+    margin-bottom: $spacing-sm;
+  }
+
+  &__subtitle {
+    color: #94a3b8;
+    font-size: 1.1rem;
+  }
+}

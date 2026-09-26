@@ -1,0 +1,30 @@
+.btn {
+  display: inline-block;
+  padding: 10px 22px;
+  border-radius: $radius-sm;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  border: none;
+  cursor: pointer;
+
+  &--primary {
+    background-color: $primary-color;
+    color: #ffffff;
+
+    &:hover {
+      background-color: $primary-hover;
+      transform: translateY(-2px);
+    }
+  }
+
+  &--secondary {
+    background-color: $secondary-color;
+    color: #ffffff;
+
+    &:hover {
+      background-color: darken($secondary-color, 8%);
+      transform: translateY(-2px);
+    }
+  }
+}

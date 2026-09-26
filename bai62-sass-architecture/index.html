@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SASS 7-1 Architecture Pattern - Hướng Dẫn & Thực Hành</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="theme-light">
+
+    <!-- Header Layout -->
+    <header class="header">
+        <div class="container">
+            <h1 class="header__title">Tổ Chức Thư Mục SASS Theo Chuẩn 7-1</h1>
+            <p class="header__subtitle">Mô hình kiến trúc chuyên nghiệp cho dự án Web quy mô lớn</p>
+        </div>
+    </header>
+
+    <!-- Home Hero Page Component -->
+    <section class="home-hero">
+        <div class="container">
+            <span class="home-hero__badge">SCSS BEST PRACTICE</span>
+            <h2>Tối Ưu Mã Nguồn - Dễ Bảo Trì - Tái Sử Dụng Cao</h2>
+            <p class="mb-lg" style="max-width: 680px; margin: 12px auto 24px auto;">
+                Việc chia nhỏ code SASS thành các file mô đun độc lập giúp dự án dễ quản lý, tăng tốc độ phát triển và tránh lặp code khi mở rộng.
+            </p>
+            <div>
+                <a href="#structure" class="btn btn--primary">Khám phá Cấu trúc</a>
+                <a href="#components" class="btn btn--secondary">Xem Components</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Container -->
+    <main class="container" id="structure">
+        <h2 class="text-center mb-lg">Chi Tiết 7 Thư Mục Trong Kiến Trúc SASS 7-1</h2>
+
+        <div class="grid-layout" id="components">
+            <!-- Card 1 -->
+            <div class="card">
+                <div class="card__icon">01</div>
+                <h3 class="card__title">abstracts/</h3>
+                <p class="card__body">Chứa các khai báo toàn cục không tạo ra mã CSS trực tiếp như biến (<code>_variables.scss</code>), mixins (<code>_mixins.scss</code>) và functions (<code>_functions.scss</code>).</p>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card">
+                <div class="card__icon">02</div>
+                <h3 class="card__title">base/</h3>
+                <p class="card__body">Chứa các thiết lập CSS mặc định cho toàn bộ trang web như reset CSS (<code>_reset.scss</code>), typography (<code>_typography.scss</code>) và quy tắc global.</p>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="card">
+                <div class="card__icon">03</div>
+                <h3 class="card__title">layout/</h3>
+                <p class="card__body">Quản lý các khối bố cục chính của giao diện bao gồm header (<code>_header.scss</code>), footer (<code>_footer.scss</code>), navigation và grid system.</p>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="card">
+                <div class="card__icon">04</div>
+                <h3 class="card__title">components/</h3>
+                <p class="card__body">Chứa style cho các thành phần UI nhỏ tái sử dụng nhiều lần như nút bấm (<code>_buttons.scss</code>), thẻ card (<code>_cards.scss</code>), modals, badges.</p>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="card">
+                <div class="card__icon">05</div>
+                <h3 class="card__title">pages/</h3>
+                <p class="card__body">Chứa các đoạn CSS chỉ áp dụng riêng biệt cho từng trang cụ thể như trang chủ (<code>_home.scss</code>), trang giới thiệu (<code>_about.scss</code>), liên hệ.</p>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="card">
+                <div class="card__icon">06</div>
+                <h3 class="card__title">themes/ & vendors/</h3>
+                <p class="card__body">Quản lý các chủ đề giao diện (<code>_light.scss</code>, <code>_dark.scss</code>) và tích hợp các thư viện CSS bên thứ 3 (Bootstrap, Font Awesome).</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Layout -->
+    <footer class="footer">
+        <div class="container footer__content">
+            <p class="footer__text">• &copy; 2025 SASS Architecture Demo. All rights reserved.</p>
+            <p class="footer__text">• Thiết kế theo mô hình 7-1 SASS Architecture Standard</p>
+        </div>
+    </footer>
+
+</body>
+</html>

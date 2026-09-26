@@ -1,0 +1,29 @@
+// ==========================================
+// SASS 7-1 ARCHITECTURE MAIN ENTRY FILE
+// ==========================================
+
+// 1. Abstracts (Biến, Mixins, Functions)
+@import "abstracts/variables";
+@import "abstracts/mixins";
+@import "abstracts/functions";
+
+// 2. Base (Reset, Typography, Global Styles)
+@import "base/reset";
+@import "base/typography";
+@import "base/global";
+
+// 3. Layout (Header, Footer, Grid)
+@import "layout/header";
+@import "layout/footer";
+@import "layout/grid";
+
+// 4. Components (Buttons, Cards)
+@import "components/buttons";
+@import "components/cards";
+
+// 5. Pages (Home)
+@import "pages/home";
+
+// 6. Themes (Light, Dark)
+@import "themes/light";
+@import "themes/dark";
