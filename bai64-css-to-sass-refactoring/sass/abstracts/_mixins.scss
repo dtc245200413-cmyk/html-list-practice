@@ -1,0 +1,22 @@
+// Mixins
+@mixin button-style($bg-color: $primary-color, $text-c: white) {
+  background: $bg-color;
+  color: $text-c;
+  padding: 12px 24px;
+  border-radius: $radius;
+  border: none;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: darken($bg-color, 10%);
+    transform: translateY(-2px);
+  }
+}
+
+@mixin box-shadow($shadow: $box-shadow) {
+  box-shadow: $shadow;
+}

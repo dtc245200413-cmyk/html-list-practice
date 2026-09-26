@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chuyển Đổi CSS Truyền Thống Sang SASS Chuẩn</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="container">
+        <header style="text-align: center; margin-bottom: 30px;">
+            <h1>Chuyển Đổi CSS Truyền Thống Sang SASS Chuẩn</h1>
+            <p>Thực hành Refactoring CSS thành SASS Modules với Biến, Mixins & Nesting</p>
+        </header>
+
+        <!-- Card 1 -->
+        <div class="card">
+            <h2 class="card__title">📌 1. So Sánh Mã CSS Ban Đầu vs SCSS Đã Refactor</h2>
+            <div class="card__content">
+                <p>Trước khi refactor, mã CSS viết phẳng (flat) dễ bị trùng lặp màu sắc, kích thước và không thể tái sử dụng logic. Sau khi chuyển đổi sang SASS:</p>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li>• Quản lý màu sắc tập trung bằng biến <code>$primary-color</code>, <code>$text-color</code>.</li>
+                    <li>• Đóng gói style nút bấm & shadow bằng Mixins <code>@mixin button-style</code>, <code>@mixin box-shadow</code>.</li>
+                    <li>• Chia nhỏ thành các Partials (<code>_variables.scss</code>, <code>_mixins.scss</code>, <code>_cards.scss</code>).</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card">
+            <h2 class="card__title">🚀 2. Demo Thành Phần Đã Áp Dụng SASS</h2>
+            <div class="card__content">
+                <p style="margin-bottom: 15px;">Các button dưới đây được tạo từ cùng một mixin <code>@mixin button-style</code>:</p>
+                <button class="button">Nút Mặc Định (Primary)</button>
+                <button class="button button--secondary">Nút Phụ (Secondary)</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
