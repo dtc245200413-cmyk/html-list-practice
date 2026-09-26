@@ -1,0 +1,74 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    padding: 30px 20px;
+    background-color: #f8fafc;
+    color: #1e293b;
+}
+
+h1 {
+    text-align: center;
+    color: #0f172a;
+    margin-bottom: 30px;
+}
+
+.example-section {
+    max-width: 800px;
+    margin: 0 auto 35px auto;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+h2 {
+    font-size: 1.2rem;
+    color: #0284c7;
+    margin-bottom: 8px;
+}
+
+.sub-desc {
+    font-size: 0.9rem;
+    color: #64748b;
+    margin-bottom: 15px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    background-color: #e2e8f0;
+    padding: 15px;
+    border-radius: 6px;
+}
+
+.item {
+    background-color: #0284c7;
+    color: white;
+    padding: 20px 10px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 4px;
+}
+
+/* 1. auto */
+.example-auto .item-1 {
+    grid-column-start: auto;
+}
+
+/* 2. column-line */
+.example-line .item-start-2 {
+    grid-column-start: 2; /* Bắt đầu hiển thị từ vạch cột số 2 */
+    background-color: #e11d48;
+}
+
+/* 3. span n */
+.example-span .item-span-2 {
+    grid-column-start: span 2; /* Kéo dài chiếm 2 cột */
+    background-color: #16a34a;
+}
