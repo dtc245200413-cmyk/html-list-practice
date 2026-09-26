@@ -1,0 +1,64 @@
+/* Định dạng chung */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+/* Thanh điều hướng */
+.sticky-menu {
+    position: sticky;
+    top: 0;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+    z-index: 1000;
+    box-sizing: border-box;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.sticky-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.sticky-menu ul li {
+    margin: 0 15px;
+}
+
+.sticky-menu ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 15px;
+    display: block;
+    transition: background-color 0.3s ease, border-radius 0.3s ease;
+}
+
+.sticky-menu ul li a:hover {
+    background-color: #575757;
+    border-radius: 5px;
+}
+
+/* Nội dung trang web */
+section {
+    padding: 100px 20px;
+    height: 100vh;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#home { background-color: #f4f4f4; }
+#about { background-color: #ddd; }
+#services { background-color: #bbb; }
+#contact { background-color: #999; color: white; }
