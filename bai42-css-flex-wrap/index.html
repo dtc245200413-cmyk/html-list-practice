@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thuộc Tính flex-wrap Trong CSS Flexbox</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Thực Hành Thuộc Tính <code>flex-wrap</code></h1>
+
+    <!-- 1. wrap -->
+    <section class="example-section">
+        <h2>1. Giá trị <code>wrap</code> (Tự động xuống dòng khi thiếu chỗ)</h2>
+        <p class="sub-desc">Các flex items tự động ngắt xuống dòng mới khi vượt quá độ rộng của container:</p>
+        <div class="flex-container wrap">
+            <div class="item">Item 1</div>
+            <div class="item">Item 2</div>
+            <div class="item">Item 3</div>
+            <div class="item">Item 4</div>
+            <div class="item">Item 5</div>
+        </div>
+    </section>
+
+    <!-- 2. nowrap -->
+    <section class="example-section">
+        <h2>2. Giá trị <code>nowrap</code> (Mặc định - Cùng nằm trên 1 dòng)</h2>
+        <p class="sub-desc">Các flex items bị ép nằm trên cùng 1 dòng và tự động thu nhỏ kích thước:</p>
+        <div class="flex-container nowrap">
+            <div class="item">Item 1</div>
+            <div class="item">Item 2</div>
+            <div class="item">Item 3</div>
+            <div class="item">Item 4</div>
+            <div class="item">Item 5</div>
+        </div>
+    </section>
+
+    <!-- 3. wrap-reverse -->
+    <section class="example-section">
+        <h2>3. Giá trị <code>wrap-reverse</code> (Tự động xuống dòng đảo ngược)</h2>
+        <p class="sub-desc">Các dòng ngắt mới sẽ đẩy ngược lên phía trên:</p>
+        <div class="flex-container wrap-reverse">
+            <div class="item">Item 1</div>
+            <div class="item">Item 2</div>
+            <div class="item">Item 3</div>
+            <div class="item">Item 4</div>
+            <div class="item">Item 5</div>
+        </div>
+    </section>
+
+    <!-- 4. initial -->
+    <section class="example-section">
+        <h2>4. Giá trị <code>initial</code> (Khôi phục giá trị mặc định)</h2>
+        <div class="flex-container initial">
+            <div class="item">Item 1</div>
+            <div class="item">Item 2</div>
+            <div class="item">Item 3</div>
+            <div class="item">Item 4</div>
+            <div class="item">Item 5</div>
+        </div>
+    </section>
+</body>
+</html>
