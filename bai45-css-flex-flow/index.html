@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thuộc Tính Viết Tắt flex-flow Trong CSS Flexbox</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Thực Hành Thuộc Tính Viết Tắt <code>flex-flow</code></h1>
+
+    <!-- 1. row nowrap -->
+    <section class="example-section">
+        <h2>1. Giá trị <code>row nowrap</code> (Mặc định)</h2>
+        <p class="sub-desc">Sắp xếp các flex item nằm ngang từ trái qua phải, không ngắt dòng:</p>
+        <div class="flex-container row-nowrap">
+            <div class="item">Item 1</div>
+            <div class="item">Item 2</div>
+            <div class="item">Item 3</div>
+            <div class="item">Item 4</div>
+        </div>
+    </section>
+
+    <!-- 2. row-reverse nowrap -->
+    <section class="example-section">
+        <h2>2. Giá trị <code>row-reverse nowrap</code></h2>
+        <p class="sub-desc">Sắp xếp các flex item đảo ngược theo thứ tự từ phải qua trái, không ngắt dòng:</p>
+        <div class="flex-container row-reverse-nowrap">
+            <div class="item">Item 1</div>
+            <div class="item">Item 2</div>
+            <div class="item">Item 3</div>
+            <div class="item">Item 4</div>
+        </div>
+    </section>
+
+    <!-- 3. row wrap -->
+    <section class="example-section">
+        <h2>3. Giá trị <code>row wrap</code></h2>
+        <p class="sub-desc">Sắp xếp theo hàng ngang và cho phép tự động ngắt dòng mới khi thiếu chỗ:</p>
+        <div class="flex-container row-wrap">
+            <div class="item">Item 1</div>
+            <div class="item">Item 2</div>
+            <div class="item">Item 3</div>
+            <div class="item">Item 4</div>
+        </div>
+    </section>
+</body>
+</html>
