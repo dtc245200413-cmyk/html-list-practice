@@ -1,0 +1,74 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    padding: 30px 20px;
+    background-color: #f8fafc;
+    color: #1e293b;
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 10px;
+    color: #0f172a;
+}
+
+.description {
+    margin-bottom: 30px;
+    color: #64748b;
+    font-size: 0.95rem;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -8px;
+}
+
+/* ✅ Mặc định màn hình lớn (> 700px): Hiển thị 4 ảnh trên 1 dòng (25% mỗi khối) */
+.gallery-item {
+    padding: 8px;
+    width: 25%;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px 6px 0 0;
+    display: block;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.02);
+}
+
+.desc {
+    padding: 12px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #475569;
+    background: #ffffff;
+    border-radius: 0 0 6px 6px;
+    border: 1px solid #e2e8f0;
+    border-top: none;
+}
+
+/* ✅ Màn hình nhỏ hơn 700px: Hiển thị 2 ảnh trên 1 dòng (50% mỗi khối) */
+@media (max-width: 700px) {
+    .gallery-item {
+        width: 50%;
+    }
+}
+
+/* ✅ Màn hình nhỏ hơn 500px: Hiển thị 1 ảnh trên 1 dòng (100% mỗi khối) */
+@media (max-width: 500px) {
+    .gallery-item {
+        width: 100%;
+    }
+}
