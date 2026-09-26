@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Grid System Refactored with SASS</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <h1>Responsive Grid System (SASS Refactored)</h1>
+            <p>Tái cấu trúc mã nguồn CSS Grid truyền thống sang mô hình SASS Modules & Mixins</p>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="container" style="margin-top: 40px;">
+
+        <!-- 4-Column Layout (Desktop: 4 col, Tablet: 2 col, Mobile: 1 col) -->
+        <h2 style="margin-bottom: 20px;">1. Bố Cục 4 Cột (Hệ Thống Lưới 12 Cột SASS)</h2>
+        <div class="row">
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="grid-card">
+                    <div class="grid-card__icon">01</div>
+                    <h3 class="grid-card__title">Cột 1 (col-lg-3)</h3>
+                    <p class="grid-card__desc">Tự động chiếm 3/12 cột trên màn hình Desktop lớn, 6/12 trên Tablet và 12/12 trên Mobile.</p>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="grid-card">
+                    <div class="grid-card__icon">02</div>
+                    <h3 class="grid-card__title">Cột 2 (col-lg-3)</h3>
+                    <p class="grid-card__desc">Tạo tự động bằng vòng lặp SASS <code>@for $i from 1 through 12</code> giúp mã vô cùng ngắn gọn.</p>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="grid-card">
+                    <div class="grid-card__icon">03</div>
+                    <h3 class="grid-card__title">Cột 3 (col-lg-3)</h3>
+                    <p class="grid-card__desc">Sử dụng SASS Map <code>$breakpoints</code> và Mixin <code>respond-min()</code> để quản lý media queries.</p>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="grid-card">
+                    <div class="grid-card__icon">04</div>
+                    <h3 class="grid-card__title">Cột 4 (col-lg-3)</h3>
+                    <p class="grid-card__desc">Tối ưu hóa khả năng bảo trì, thay đổi khoảng cách Gutter duy nhất bằng 1 biến <code>$gutter-width</code>.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2-Column Asymmetric Layout (8:4 ratio) -->
+        <h2 style="margin-bottom: 20px; margin-top: 30px;">2. Bố Cục Bài Viết & Sidebar (Tỷ Lệ 8 : 4)</h2>
+        <div class="row">
+            <div class="col-12 col-lg-8">
+                <div class="grid-card" style="padding: 30px;">
+                    <h3 class="grid-card__title" style="font-size: 1.5rem;">Nội Dung Bài Viết Chính (col-lg-8)</h3>
+                    <p class="grid-card__desc" style="font-size: 1.05rem; line-height: 1.8;">
+                        • Bằng cách sử dụng SASS để tái cấu trúc lại mã CSS Grid truyền thống, chúng ta có thể loại bỏ hoàn toàn việc lặp lại hàng trăm dòng mã CSS thủ công cho từng độ phân giải màn hình.<br><br>
+                        • Vòng lặp <code>@for</code> trong SASS sẽ tự động sinh ra tất cả các class từ <code>.col-1</code> đến <code>.col-12</code> cùng với các biến thể responsive như <code>.col-md-*</code> và <code>.col-lg-*</code>.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-12 col-lg-4">
+                <div class="grid-card" style="padding: 30px;">
+                    <h3 class="grid-card__title" style="font-size: 1.5rem;">Thanh Bên Sidebar (col-lg-4)</h3>
+                    <p class="grid-card__desc">
+                        • Liên kết nhanh<br>
+                        • Tin tức nổi bật<br>
+                        • Chủ đề liên quan
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <p>• &copy; 2025 Responsive Grid SASS Refactoring. CodeGym Practice Exercise.</p>
+    </footer>
+
+</body>
+</html>
