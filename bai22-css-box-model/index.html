@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xây dựng bố cục với Mô hình hộp CSS (Box Model)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="page-header">
+        <h1>Bài Tập Mô Hình Hộp CSS (Box Model)</h1>
+        <p>So sánh sự khác biệt giữa <code>box-sizing: content-box</code> và <code>box-sizing: border-box</code></p>
+    </header>
+
+    <main class="container">
+        <!-- Thẻ thứ 1: content-box, màu xanh lá cây -->
+        <div class="card">
+            <h3>Thẻ 1: content-box</h3>
+            <p>Màu xanh lá (#2ecc71)</p>
+            <p>Kích thước thực tế: <strong>330px x 200px</strong> (Kích thước bị phình to ra vì cộng thêm padding & border).</p>
+        </div>
+
+        <!-- Thẻ thứ 2: border-box, màu vàng -->
+        <div class="card">
+            <h3>Thẻ 2: border-box</h3>
+            <p>Màu vàng (#f1c40f)</p>
+            <p>Kích thước thực tế: <strong>280px x 150px</strong> (Kích thước giữ nguyên chuẩn theo width & height đã đặt).</p>
+        </div>
+
+        <!-- Thẻ thứ 3: border-box, màu đỏ -->
+        <div class="card">
+            <h3>Thẻ 3: border-box</h3>
+            <p>Màu đỏ (#e74c3c)</p>
+            <p>Kích thước thực tế: <strong>280px x 150px</strong> (Giữ nguyên chuẩn 280x150px, dễ kiểm soát bố cục layout).</p>
+        </div>
+    </main>
+</body>
+</html>
