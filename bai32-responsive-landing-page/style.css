@@ -1,0 +1,158 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #1e293b;
+    background-color: #ffffff;
+    line-height: 1.6;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 15px 20px;
+    color: white;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #38bdf8;
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.nav ul li {
+    margin: 0 15px;
+}
+
+.nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    transition: color 0.2s ease;
+}
+
+.nav ul li a:hover {
+    color: #38bdf8;
+}
+
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    background-color: #f4f4f4;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #0f172a;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #64748b;
+    margin-bottom: 25px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #0284c7;
+    color: white;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+}
+
+.btn:hover {
+    background-color: #0369a1;
+}
+
+.services {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.services h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #0f172a;
+}
+
+.service-container {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.service {
+    background-color: lightblue;
+    padding: 30px 20px;
+    margin: 10px;
+    flex: 1;
+    border-radius: 8px;
+    font-weight: bold;
+    color: #0369a1;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.testimonials {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #ddd;
+}
+
+.testimonials h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #0f172a;
+}
+
+.testimonial {
+    background-color: white;
+    padding: 20px;
+    margin: 15px auto;
+    max-width: 600px;
+    border-radius: 8px;
+    font-style: italic;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    color: #334155;
+}
+
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+}
+
+/* ✅ Media Queries cho Mobile */
+@media (max-width: 768px) {
+    .nav ul {
+        display: none;
+    }
+
+    .service-container {
+        flex-direction: column;
+    }
+
+    .service {
+        margin: 10px 0;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+}
