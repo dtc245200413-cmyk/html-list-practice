@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minh Họa Mô Hình Hộp (CSS Box Model)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+            padding: 30px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        h1 {
+            color: lightseagreen;
+            margin-bottom: 10px;
+        }
+
+        .demo-box {
+            margin: 25px;
+            padding: 35px;
+            width: 200px;
+            background-color: lightseagreen;
+            border: 20px dashed indianred;
+            color: white;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .explanation {
+            background-color: #f1f5f9;
+            border-left: 4px solid lightseagreen;
+            padding: 15px 20px;
+            margin-top: 25px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .formula {
+            background: #e2e8f0;
+            padding: 10px 15px;
+            font-family: 'Courier New', Courier, monospace;
+            border-radius: 6px;
+            font-weight: bold;
+            color: #0f172a;
+            margin: 10px 0;
+            display: inline-block;
+        }
+
+        .highlight {
+            color: indianred;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Minh Họa Mô Hình Hộp (CSS Box Model)</h1>
+        <p>Phần tử bên dưới có thuộc tính: width=200px, padding=35px, border=20px, margin=25px.</p>
+
+        <!-- Thẻ DIV được định dạng theo mã nguồn -->
+        <div class="demo-box">
+            Content demo box<br/>
+        </div>
+
+        <div class="explanation">
+            <h3>Công Thức Tính Tổng Chiều Rộng:</h3>
+            <div class="formula">
+                Tổng width = width + (padding-left + padding-right) + (border-left + border-right) + (margin-left + margin-right)
+            </div>
+            <p>= 200 + (35 + 35) + (20 + 20) + (25 + 25) px</p>
+            <p>= 200 + 70 + 40 + 50 = <span class="highlight">360px</span></p>
+        </div>
+    </div>
+</body>
+</html>
