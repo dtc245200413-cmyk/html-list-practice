@@ -1,0 +1,16 @@
+{
+  "name": "bai63-sass-setup-cli",
+  "version": "1.0.0",
+  "description": "Hướng dẫn Cài đặt & Sử dụng SASS CLI với Node.js và npm",
+  "main": "index.html",
+  "scripts": {
+    "build:css": "sass scss/:css/ --no-source-map",
+    "watch:css": "sass scss/:css/ --watch"
+  },
+  "keywords": ["sass", "scss", "cli", "node", "npm"],
+  "author": "Creative Web Team",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.105.0"
+  }
+}

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hướng Dẫn Cài Đặt & Sử Dụng SASS CLI với Node.js</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Fira+Code:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="header">
+        <span class="header__badge">SASS / SCSS CLI SETUP GUIDE</span>
+        <h1 class="header__title">Cài Đặt & Sử Dụng SASS CLI</h1>
+        <p class="header__subtitle">Hướng dẫn toàn diện về Node.js, npm và SASS Command Line Interface</p>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        
+        <section style="margin-bottom: 3rem;">
+            <h2>1. Các Bước Cài Đặt Node.js & SASS CLI</h2>
+            <div class="grid-3">
+                <div class="step-card">
+                    <div class="step-card__icon">01</div>
+                    <h3 class="step-card__title">Kiểm Tra Node.js</h3>
+                    <p class="step-card__desc">Kiểm tra xem máy tính đã có Node.js và npm hay chưa bằng Terminal:</p>
+                    <div class="code-block">node -v<br>npm -v</div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-card__icon">02</div>
+                    <h3 class="step-card__title">Cài Đặt SASS Global</h3>
+                    <p class="step-card__desc">Sử dụng npm để cài đặt SASS trên toàn hệ thống:</p>
+                    <div class="code-block">npm install -g sass</div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-card__icon">03</div>
+                    <h3 class="step-card__title">Kiểm Tra Phiên Bản</h3>
+                    <p class="step-card__desc">Xác nhận SASS đã sẵn sàng sử dụng:</p>
+                    <div class="code-block">sass --version</div>
+                </div>
+            </div>
+        </section>
+
+        <section style="margin-bottom: 3rem;">
+            <h2>2. Lệnh Biên Dịch SASS CLI & Watch Mode</h2>
+            <div class="grid-3">
+                <div class="step-card">
+                    <div class="step-card__icon">⚡</div>
+                    <h3 class="step-card__title">Biên Dịch File Đơn</h3>
+                    <p class="step-card__desc">Chuyển đổi một file SCSS sang CSS:</p>
+                    <div class="code-block">sass scss/styles.scss css/styles.css</div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-card__icon">👀</div>
+                    <h3 class="step-card__title">Chế Độ Watch Mode</h3>
+                    <p class="step-card__desc">Tự động biên dịch khi lưu tệp SCSS:</p>
+                    <div class="code-block">sass scss/styles.scss css/styles.css --watch</div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-card__icon">📁</div>
+                    <h3 class="step-card__title">Biên Dịch Thư Mục</h3>
+                    <p class="step-card__desc">Biên dịch toàn bộ thư mục SCSS sang CSS:</p>
+                    <div class="code-block">sass scss/:css/ --watch</div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>3. Tích Hợp npm Scripts Trong package.json</h2>
+            <p style="margin-bottom: 1rem;">Để chuyên nghiệp hóa quy trình phát triển, ta có thể định nghĩa các lệnh chạy trong <code>package.json</code>:</p>
+            <div class="code-block" style="font-size: 0.95rem; line-height: 1.8;">
+"scripts": {<br>
+&nbsp;&nbsp;"build:css": "sass scss/:css/ --no-source-map",<br>
+&nbsp;&nbsp;"watch:css": "sass scss/:css/ --watch"<br>
+}
+            </div>
+            <p style="margin-top: 1rem;">Khi phát triển dự án, chỉ cần chạy lệnh ngắn gọn trong Terminal:</p>
+            <div class="code-block">npm run watch:css</div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>• &copy; 2025 SASS CLI Setup Guide. All rights reserved.</p>
+        <p>• Thực hành biên dịch SCSS sang CSS với Node.js v24.19.0 & SASS CLI v1.105.0</p>
+    </footer>
+
+</body>
+</html>

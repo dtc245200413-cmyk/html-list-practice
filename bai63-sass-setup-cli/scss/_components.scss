@@ -1,0 +1,81 @@
+// Buttons
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: $radius-btn;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+
+  &--primary {
+    background-color: $primary;
+    color: #ffffff;
+
+    &:hover {
+      background-color: $primary-hover;
+      transform: translateY(-2px);
+    }
+  }
+
+  &--outline {
+    background-color: transparent;
+    color: $primary;
+    border: 2px solid $primary;
+
+    &:hover {
+      background-color: $primary;
+      color: #ffffff;
+      transform: translateY(-2px);
+    }
+  }
+}
+
+// Code Box Component
+.code-block {
+  background-color: $dark-bg;
+  color: #38bdf8;
+  padding: 1rem;
+  border-radius: 10px;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.9rem;
+  overflow-x: auto;
+  margin: 1rem 0;
+  border: 1px solid #334155;
+}
+
+// Card Component
+.step-card {
+  background-color: $card-bg;
+  border: 1px solid $border-color;
+  border-radius: $radius-card;
+  padding: 1.5rem;
+  @include shadow-hover;
+
+  &__icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    background-color: rgba($primary, 0.1);
+    color: $primary;
+    font-weight: 800;
+    font-size: 1.1rem;
+    @include flex-center;
+    margin-bottom: 1rem;
+  }
+
+  &__title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: $text-main;
+    margin-bottom: 0.5rem;
+  }
+
+  &__desc {
+    color: $text-sub;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+}

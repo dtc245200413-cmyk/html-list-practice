@@ -1,0 +1,25 @@
+// Flexbox Alignment Mixin
+@mixin flex-center($justify: center, $align: center, $dir: row) {
+  display: flex;
+  flex-direction: $dir;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+// Media Query Mixin
+@mixin responsive($breakpoint) {
+  @if $breakpoint == "mobile" {
+    @media (max-width: 640px) { @content; }
+  } @else if $breakpoint == "tablet" {
+    @media (max-width: 768px) { @content; }
+  }
+}
+
+// Hover Card Elevation
+@mixin shadow-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.08);
+  }
+}
