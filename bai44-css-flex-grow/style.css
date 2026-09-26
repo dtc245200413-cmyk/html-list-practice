@@ -1,0 +1,63 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    padding: 30px 20px;
+    background-color: #f8fafc;
+    color: #1e293b;
+}
+
+h1 {
+    text-align: center;
+    color: #0f172a;
+    margin-bottom: 30px;
+}
+
+.example-section {
+    max-width: 850px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+h2 {
+    font-size: 1.2rem;
+    color: #0284c7;
+    margin-bottom: 8px;
+}
+
+.sub-desc {
+    font-size: 0.9rem;
+    color: #64748b;
+    margin-bottom: 20px;
+}
+
+.flex-container {
+    display: flex;
+    background-color: #cbd5e1;
+    padding: 15px;
+    border-radius: 6px;
+    gap: 10px;
+}
+
+.item {
+    background-color: #0284c7;
+    color: white;
+    padding: 20px 10px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 4px;
+    flex-grow: 1; /* Tất cả các item mặc định có tỷ lệ phát triển 1 */
+}
+
+/* Áp dụng flex-grow lớn hơn cho div thứ 2 */
+.item-grow-2 {
+    flex-grow: 3; /* Phát triển lớn gấp 3 lần so với các div khác */
+    background-color: #e11d48;
+}
