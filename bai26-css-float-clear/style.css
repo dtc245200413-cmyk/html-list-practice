@@ -1,0 +1,47 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f8fafc;
+    color: #1e293b;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.container {
+    width: 100%;
+    overflow: hidden;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.left-column {
+    width: 60%;
+    float: left;
+    background-color: lightblue;
+    padding: 20px;
+    min-height: 200px;
+}
+
+.right-column {
+    width: 38%;
+    float: right;
+    background-color: lightgreen;
+    padding: 20px;
+    min-height: 200px;
+}
+
+/* Xử lý float (Clearfix) */
+.container::after {
+    content: "";
+    display: block;
+    clear: both;
+}
