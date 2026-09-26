@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thuộc Tính flex-basis Trong CSS Flexbox</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Thực Hành Thuộc Tính <code>flex-basis</code></h1>
+
+    <!-- VÍ DỤ 1: Đơn vị độ dài cố định (px / %) -->
+    <section class="example-section">
+        <h2>Ví Dụ 1: Đơn vị độ dài ban đầu cố định (<code>flex-basis: 200px</code> & <code>flex-basis: 300px</code>)</h2>
+        <p class="sub-desc">Chỉ định kích thước ban đầu cố định trước khi phân bổ không gian trong flex container:</p>
+        <div class="flex-container example-1">
+            <div class="item item-basis-200">Item 1 (flex-basis: 200px)</div>
+            <div class="item item-basis-300">Item 2 (flex-basis: 300px)</div>
+        </div>
+    </section>
+
+    <!-- VÍ DỤ 2: auto (Kích thước tự động theo nội dung) -->
+    <section class="example-section">
+        <h2>Ví Dụ 2: Kích thước tự động theo nội dung (<code>flex-basis: auto</code>)</h2>
+        <p class="sub-desc">Kích thước ban đầu của item được tính tự động dựa theo độ dài văn bản bên trong:</p>
+        <div class="flex-container example-2">
+            <div class="item item-auto">Ngắn (auto)</div>
+            <div class="item item-auto">Item này có nội dung văn bản dài hơn (flex-basis: auto)</div>
+        </div>
+    </section>
+</body>
+</html>

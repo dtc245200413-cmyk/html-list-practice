@@ -1,0 +1,73 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    padding: 30px 20px;
+    background-color: #f8fafc;
+    color: #1e293b;
+}
+
+h1 {
+    text-align: center;
+    color: #0f172a;
+    margin-bottom: 30px;
+}
+
+.example-section {
+    max-width: 800px;
+    margin: 0 auto 35px auto;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+h2 {
+    font-size: 1.2rem;
+    color: #0284c7;
+    margin-bottom: 8px;
+}
+
+.sub-desc {
+    font-size: 0.9rem;
+    color: #64748b;
+    margin-bottom: 15px;
+}
+
+.flex-container {
+    display: flex;
+    background-color: #cbd5e1;
+    padding: 15px;
+    border-radius: 6px;
+    gap: 15px;
+}
+
+.item {
+    background-color: #0284c7;
+    color: white;
+    padding: 20px 15px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 4px;
+}
+
+/* VÍ DỤ 1: flex-basis với đơn vị cố định */
+.item-basis-200 {
+    flex-basis: 200px;
+    background-color: #0284c7;
+}
+
+.item-basis-300 {
+    flex-basis: 300px;
+    background-color: #0369a1;
+}
+
+/* VÍ DỤ 2: flex-basis: auto (Tự động theo nội dung) */
+.item-auto {
+    flex-basis: auto;
+    background-color: #0d9488;
+}
