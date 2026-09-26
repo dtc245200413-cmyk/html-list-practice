@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Landing Page Sản Phẩm</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <!-- 1. Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-primary" href="#">TechPro</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#landingNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="landingNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#">Trang Chủ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">Giới Thiệu</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#features">Tính Năng</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#cta">Đăng Ký</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 2. Banner Hero Section -->
+    <header class="bg-dark text-white text-center py-5 position-relative" style="background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://picsum.photos/1200/500?random=10') center/cover no-repeat;">
+        <div class="container py-5">
+            <h1 class="display-3 fw-bold mb-3">Giải Pháp Công Nghệ Bứt Phá</h1>
+            <p class="lead mb-4 mx-auto" style="max-width: 700px;">Nâng tầm doanh nghiệp của bạn với nền tảng công nghệ số tiên tiến nhất hiện nay.</p>
+            <a href="#cta" class="btn btn-primary btn-lg fw-bold px-4 py-2">Đăng Ký Ngay</a>
+        </div>
+    </header>
+
+    <!-- 3. Giới thiệu Sản phẩm (Img-fluid + Row) -->
+    <section id="about" class="container py-5">
+        <div class="row align-items-center">
+            <div class="col-md-6 mb-4 mb-md-0">
+                <img src="https://picsum.photos/600/400?random=11" alt="Giới thiệu sản phẩm" class="img-fluid rounded shadow">
+            </div>
+            <div class="col-md-6">
+                <h2 class="fw-bold mb-3">Về Sản Phẩm Của Chúng Tôi</h2>
+                <p class="lead text-secondary">TechPro mang đến hệ sinh thái giải pháp tự động hóa giúp tối ưu hóa quy trình làm việc và tăng trưởng doanh thu hiệu quả.</p>
+                <p class="text-muted">Được thiết kế tối ưu giao diện trải nghiệm người dùng, dễ dàng tích hợp và vận hành mượt mà trên mọi thiết bị di động cũng như máy tính cá nhân.</p>
+                <a href="#features" class="btn btn-outline-primary mt-2">Xem Thêm Chi Tiết</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Danh sách Tính năng (Grid 3 Cột) -->
+    <section id="features" class="bg-light py-5">
+        <div class="container">
+            <h2 class="text-center fw-bold mb-5">Tính Năng Nổi Bật</h2>
+            <div class="row text-center">
+                <div class="col-md-4 mb-4">
+                    <div class="p-4 bg-white rounded shadow-sm h-100 border-0">
+                        <div class="fs-1 text-primary mb-3">⚡</div>
+                        <h3 class="h5 fw-bold">Tốc Độ Siêu Nhanh</h3>
+                        <p class="text-muted small mb-0">Tối ưu hóa mã nguồn giúp hệ thống xử lý dữ liệu tức thì và giảm thiểu thời gian chờ.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="p-4 bg-white rounded shadow-sm h-100 border-0">
+                        <div class="fs-1 text-primary mb-3">🛡️</div>
+                        <h3 class="h5 fw-bold">Bảo Mật Tuyệt Đối</h3>
+                        <p class="text-muted small mb-0">Áp dụng chuẩn mã hóa dữ liệu cao cấp đảm bảo an toàn tuyệt đối thông tin người dùng.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="p-4 bg-white rounded shadow-sm h-100 border-0">
+                        <div class="fs-1 text-primary mb-3">📱</div>
+                        <h3 class="h5 fw-bold">Giao Diện Responsive</h3>
+                        <p class="text-muted small mb-0">Tương thích hoàn hảo trên tất cả màn hình thiết bị từ điện thoại đến máy tính bảng.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Nút Kêu Gọi Hành Động (CTA) -->
+    <section id="cta" class="bg-primary text-white text-center py-5">
+        <div class="container py-3">
+            <h2 class="fw-bold mb-3">Sẵn Sàng Trải Nghiệm Dịch Vụ?</h2>
+            <p class="lead mb-4">Đăng ký ngay hôm nay để nhận được 30 ngày dùng thử hoàn toàn miễn phí.</p>
+            <a href="#" class="btn btn-light btn-lg fw-bold px-5 text-primary">Đăng Ký Ngay</a>
+        </div>
+    </section>
+
+    <!-- 6. Footer -->
+    <footer class="bg-dark text-white text-center py-3">
+        <div class="container">
+            <p class="mb-0">&copy; 2026 TechPro Landing Page. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
