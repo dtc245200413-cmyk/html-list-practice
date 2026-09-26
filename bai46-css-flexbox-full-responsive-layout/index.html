@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Layout</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Header - Tiêu Đề Trang Web</h1>
+        </header>
+        <nav class="nav">
+            <a href="#">Trang chủ</a> | 
+            <a href="#">Giới thiệu</a> | 
+            <a href="#">Dịch vụ</a> | 
+            <a href="#">Liên hệ</a>
+        </nav>
+        <div class="main-container">
+            <main class="content">
+                <h2>Main Content - Nội dung chính</h2>
+                <p>Khu vực hiển thị bài viết chính được định dạng bằng thuộc tính <code>flex: 3</code> giúp chiếm 3/4 độ rộng trong khối <code>main-container</code>.</p>
+            </main>
+            <aside class="sidebar">
+                <h3>Sidebar</h3>
+                <p>Nội dung phụ (quảng cáo, tin tức liên quan) được định dạng bằng <code>flex: 1</code> chiếm 1/4 độ rộng còn lại.</p>
+            </aside>
+        </div>
+        <footer class="footer">
+            <p>&copy; 2026 Flexbox Layout Practice. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
